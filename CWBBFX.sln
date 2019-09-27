@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWBBFX", "CWBBFX\CWBBFX.csproj", "{8E3F6067-A213-416D-B251-2A7DABF624BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E3F6067-A213-416D-B251-2A7DABF624BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3F6067-A213-416D-B251-2A7DABF624BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3F6067-A213-416D-B251-2A7DABF624BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3F6067-A213-416D-B251-2A7DABF624BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7495ECCA-9462-4274-A747-E8AC2F977EF1}
+	EndGlobalSection
+EndGlobal
