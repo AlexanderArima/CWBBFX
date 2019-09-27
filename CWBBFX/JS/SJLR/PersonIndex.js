@@ -104,8 +104,12 @@
      * */
     var number_cx = $("#number_cx");
 
-
+    /**
+     * 投资储备
+     * */
     var number_tzcb = $("#number_tzcb");
+
+    //纸质产
     var number_zzc1_mc = $("#number_zzc1_mc");
     var number_zzc1_sl = $("#number_zzc1_sl");
     var number_zzc1_jg = $("#number_zzc1_jg");
@@ -136,6 +140,24 @@
     var number_fc2_mc = $("#number_fc2_mc");
     var number_fc2_jg = $("#number_fc2_jg");
     var number_zzc = $("#number_zzc");
+
+    //负债
+    var number_fz_fd = $("#number_fz_fd");
+    var number_fz_cd = $("#number_fz_cd");
+    var number_fz_xfd = $("#number_fz_xfd");
+    var number_fz_fc1mc = $("#number_fz_fc1mc");
+    var number_fz_fc1jg = $("#number_fz_fc1jg");
+    var number_fz_fc1dk = $("#number_fz_fc1dk");
+    var number_fz_fc2mc = $("#number_fz_fc2mc");
+    var number_fz_fc2jg = $("#number_fz_fc2jg");
+    var number_fz_fc2dk = $("#number_fz_fc2dk");
+    var number_zfz = $("#number_zfz");
+    var number_jz = $("#number_jz");
+
+    /**
+     * 总负债
+     * */
+    var number_zfz = $("#number_zfz"); 
     
     //收入
     number_gz.change(function () {
@@ -198,6 +220,116 @@
         ZZCHJ();
     });
 
+    number_tzcb.change(function () {
+        ZZCHJ();
+    });
+
+    number_fz_fd.change(function () {
+        ZFZHJ();
+    });
+
+    number_fz_cd.change(function () {
+        ZFZHJ();
+    });
+
+    number_fz_xfd.change(function () {
+        ZFZHJ();
+    });
+
+    number_fz_fc1jg.change(function () {
+        ZFZHJ();
+    });
+
+    number_fz_fc1dk.change(function () {
+        ZFZHJ();
+    });
+
+    number_fz_fc2jg.change(function () {
+        ZFZHJ();
+    });
+
+    number_fz_fc2dk.change(function () {
+        ZFZHJ();
+    });
+
+    number_zzc1_sl.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc1_sl.val(), number_zzc1_jg.val());
+        number_zzc1_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc1_jg.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc1_sl.val(), number_zzc1_jg.val());
+        number_zzc1_hj.val(total);
+        ZZCHJ();
+    });
+    
+    number_zzc2_sl.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc2_sl.val(), number_zzc2_jg.val());
+        number_zzc2_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc2_jg.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc2_sl.val(), number_zzc2_jg.val());
+        number_zzc2_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc3_sl.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc3_sl.val(), number_zzc3_jg.val());
+        number_zzc3_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc3_jg.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc3_sl.val(), number_zzc3_jg.val());
+        number_zzc3_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc4_sl.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc4_sl.val(), number_zzc4_jg.val());
+        number_zzc4_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc4_jg.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc4_sl.val(), number_zzc4_jg.val());
+        number_zzc4_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc5_sl.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc5_sl.val(), number_zzc5_jg.val());
+        number_zzc5_hj.val(total);
+        ZZCHJ();
+    });
+
+    number_zzc5_jg.change(function () {
+        //计算纸资产合计金额
+        var total = GetPaper(number_zzc5_sl.val(), number_zzc5_jg.val());
+        number_zzc5_hj.val(total);
+        ZZCHJ();
+    });
+    
+    number_fc1_jg.change(function () {
+        ZZCHJ();
+    });
+
+    number_fc2_jg.change(function () {
+        ZZCHJ();
+    });
+    
     /*
      * 收入合计
      * **/
@@ -269,12 +401,53 @@
         }
     }
 
+    /*
+     * 纸资产合计
+     * **/
+    function GetPaper(sj, jg)
+    {
+        if (sj.length > 0 && jg.length > 0)
+        {
+            return sj * jg;
+        }
+        return 0;
+    }
+
     /**
      * 总资产合计
      * */
     function ZZCHJ()
     {
-
+        var total = 0;
+        if (number_cx.val().length > 0) {
+            total = total + parseInt(number_cx.val());
+        }
+        if (number_tzcb.val().length > 0) {
+            total = total + parseInt(number_tzcb.val());
+        }
+        if (number_zzc1_hj.val().length > 0) {
+            total = total + parseInt(number_zzc1_hj.val());
+        }
+        if (number_zzc2_hj.val().length > 0) {
+            total = total + parseInt(number_zzc2_hj.val());
+        }
+        if (number_zzc3_hj.val().length > 0) {
+            total = total + parseInt(number_zzc3_hj.val());
+        }
+        if (number_zzc4_hj.val().length > 0) {
+            total = total + parseInt(number_zzc4_hj.val());
+        }
+        if (number_zzc5_hj.val().length > 0) {
+            total = total + parseInt(number_zzc5_hj.val());
+        }
+        if (number_fc1_jg.val().length > 0) {
+            total = total + parseInt(number_fc1_jg.val());
+        }
+        if (number_fc2_jg.val().length > 0) {
+            total = total + parseInt(number_fc2_jg.val());
+        }
+        number_zzc.val(total);
+        JZJS();
     }
 
     /**
@@ -282,7 +455,42 @@
      * */
     function ZFZHJ()
     {
-        
+        var total = 0;
+        if (number_fz_fd.val().length > 0) {
+            total = total + parseInt(number_fz_fd.val());
+        }
+        if (number_fz_cd.val().length > 0) {
+            total = total + parseInt(number_fz_cd.val());
+        }
+        if (number_fz_xfd.val().length > 0) {
+            total = total + parseInt(number_fz_xfd.val());
+        }
+        if (number_fz_fc1dk.val().length > 0) {
+            total = total + parseInt(number_fz_fc1dk.val());
+        }
+        if (number_fz_fc2dk.val().length > 0) {
+            total = total + parseInt(number_fz_fc2dk.val());
+        }
+        number_zfz.val(total);
+        JZJS();
+    }
+
+    /**
+     * 净值计算
+     * */
+    function JZJS()
+    {
+        var zzc = 0;
+        var zfz = 0;
+        if (number_zzc.val().length > 0)
+        {
+            zzc = parseInt(number_zzc.val());
+        }
+        if (number_zfz.val().length > 0)
+        {
+            zfz = parseInt(number_zfz.val());
+        }
+        number_jz.val(zzc - zfz);
     }
 
 }
