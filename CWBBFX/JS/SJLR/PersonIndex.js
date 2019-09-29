@@ -329,6 +329,73 @@
     number_fc2_jg.change(function () {
         ZZCHJ();
     });
+
+    $("#button_sub").click(function () {
+        //提交
+        var req = {
+            "number_gz": number_gz.val(),
+            "number_bdsr": number_bdsr.val(),
+            "number_fh": number_fh.val(),
+            "number_fz": number_fz.val(),
+            "number_yw": number_yw.val(),
+            "number_qt1": number_qt1.val(),
+            "number_qt2": number_qt2.val(),
+            "number_srhj": number_srhj.val(),
+            "number_rckx": number_rckx.val(),
+            "number_bdzc": number_bdzc.val(),
+            "number_fd": number_fd.val(),
+            "number_cd": number_cd.val(),
+            "number_xfd": number_xfd.val(),
+            "number_xx": number_xx.val(),
+            "number_xl": number_xl.val(),
+            "number_zcqt1": number_zcqt1.val(),
+            "number_zcqt2": number_zcqt2.val(),
+            "number_zchj": number_zchj.val(),
+            "number_xjl": number_xjl.val(),
+            "number_cx": number_cx.val(),
+            "number_tzcb": number_tzcb.val(),
+            "number_zzc1_mc": number_zzc1_mc.val(),
+            "number_zzc1_sl": number_zzc1_sl.val(),
+            "number_zzc1_jg": number_zzc1_jg.val(),
+            "number_zzc1_hj": number_zzc1_hj.val(),
+            "number_zzc2_mc": number_zzc2_mc.val(),
+            "number_zzc2_sl": number_zzc2_sl.val(),
+            "number_zzc2_jg": number_zzc2_jg.val(),
+            "number_zzc2_hj": number_zzc2_hj.val(),
+            "number_zzc3_mc": number_zzc3_mc.val(),
+            "number_zzc3_sl": number_zzc3_sl.val(),
+            "number_zzc3_jg": number_zzc3_jg.val(),
+            "number_zzc3_hj": number_zzc3_hj.val(),
+            "number_zzc4_mc": number_zzc4_mc.val(),
+            "number_zzc4_sl": number_zzc4_sl.val(),
+            "number_zzc4_jg": number_zzc4_jg.val(),
+            "number_zzc4_hj": number_zzc4_hj.val(),
+            "number_zzc5_mc": number_zzc5_mc.val(),
+            "number_zzc5_sl": number_zzc5_sl.val(),
+            "number_zzc5_jg": number_zzc5_jg.val(),
+            "number_zzc5_hj": number_zzc5_hj.val(),
+            "number_fc1_mc": number_fc1_mc.val(),
+            "number_fc1_jg": number_fc1_jg.val(),
+            "number_fc2_mc": number_fc2_mc.val(),
+            "number_fc2_jg": number_fc2_jg.val(),
+            "number_zzc": number_zzc.val(),
+            "number_fz_fd": number_fz_fd.val(),
+            "number_fz_cd": number_fz_cd.val(),
+            "number_fz_xfd": number_fz_xfd.val(),
+            "number_fz_fc1mc": number_fz_fc1mc.val(),
+            "number_fz_fc1jg": number_fz_fc1jg.val(),
+            "number_fz_fc1dk": number_fz_fc1dk.val(),
+            "number_fz_fc2mc": number_fz_fc2mc.val(),
+            "number_fz_fc2jg": number_fz_fc2jg.val(),
+            "number_fz_fc2dk": number_fz_fc2dk.val(),
+            "number_zfz": number_zfz.val(),
+            "number_jz": number_jz.val(),
+        };
+        console.log(JSON.stringify(req));
+        $.post("PersonIndex", req, function (data) {
+            console.log(data);
+        });
+    });
     
     /*
      * 收入合计
