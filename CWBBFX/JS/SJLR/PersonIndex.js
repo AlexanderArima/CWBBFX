@@ -1,4 +1,10 @@
 ﻿window.onload = function () {
+
+    /**
+     * 月份
+     * */
+    var text_yf = $("#text_yf");
+
     //收入
     /**
      * 工资收入
@@ -333,6 +339,7 @@
     $("#button_sub").click(function () {
         //提交
         var req = {
+            "text_yf": text_yf.val(),
             "number_gz": number_gz.val(),
             "number_bdsr": number_bdsr.val(),
             "number_fh": number_fh.val(),
@@ -391,9 +398,28 @@
             "number_zfz": number_zfz.val(),
             "number_jz": number_jz.val(),
         };
-        console.log(JSON.stringify(req));
-        $.post("PersonIndex", req, function (data) {
-            console.log(data);
+        if (text_yf.val().length <= 0) {
+            layer.alert("请选择年月");
+            return;
+        }
+        if (text_yf.val().length != 6) {
+            layer.alert('请输入正确的月份');
+            return;
+        }
+        var index = layer.load();
+        $.post("/SJLR/PersonIndex", req, function (data) {
+            layer.close(index);
+            var jsonObj = eval("(" + data + ")");
+            if (jsonObj.code == "0") {
+                layer.alert("保存成功!" , { icon: 1 }, function (index) {
+                    //跳转到主界面
+                    window.location.reload();
+                });
+            }
+            else {
+                layer.alert(jsonObj.msg, { icon: 7 });
+            }
+            console.log(jsonObj);
         });
     });
     

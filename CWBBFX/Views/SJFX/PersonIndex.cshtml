@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "数据分析(个人)";
+}
+<div style="padding-left: 40px;">
+    <label>月份：</label>
+    <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="text_yf" placeholder="yyyy-MM" onClick="WdatePicker({dateFmt:'yyyyMM'})">
+    </div>
+</div>
+
+<table class="layui-table">
+    <colgroup>
+        <col width="100">
+        <col width="100">
+        <col width="100">
+        <col width="100">
+        <col width="100">
+        <col>
+    </colgroup>
+    <tbody>
+        <tr>
+            <td>
+                <label class="layui-form-label" style="width:100%;padding:0"> 净值：@ViewData["JZ"]  环比： @ViewData["JZHB"]</label>
+            </td>
+            <td>现金流：@ViewData["XJL"] 环比：@ViewData["XJLHB"]</td>
+            <td>资产：@ViewData["ZC"]</td>
+            <td>负债：@ViewData["FZ"]</td>
+            <td> 资产负债比例：@ViewData["ZCFZBL"]</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="layui-row layui-col-space5">
+    <div class="layui-col-md6">
+        yyyy年MM月 收入：环比：
+
+    </div>
+    <div class="layui-col-md6">
+        yyyy年MM月 支出：环比：
+
+    </div>
+</div>

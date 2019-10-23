@@ -7,7 +7,7 @@ namespace CWBBFX.Common.Dapper
     public class DapperManager
     {
 
-        public static string connectionString = string.Format(@"Data Source={0}HotelManage.db;Version=3;", System.AppDomain.CurrentDomain.BaseDirectory);
+        public static string connectionString = string.Format(@"Data Source={0}Main.db;Version=3;", System.AppDomain.CurrentDomain.BaseDirectory);
 
         private static IDbConnection _instance = null;
 

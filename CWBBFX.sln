@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWBBFX", "CWBBFX\CWBBFX.csproj", "{8E3F6067-A213-416D-B251-2A7DABF624BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWBBFX.Common", "CWBBFX.Common\CWBBFX.Common.csproj", "{5170E353-FBC8-49F4-9DEB-9874BD1F112E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWBBFX.Common", "CWBBFX.Common\CWBBFX.Common.csproj", "{5170E353-FBC8-49F4-9DEB-9874BD1F112E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWBBFX.ViewModel", "CWBBFX.ViewModel\CWBBFX.ViewModel.csproj", "{2F671F11-68A5-4515-8FDF-BD6D1B548322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWBBFX.Test", "CWBBFX.Test\CWBBFX.Test.csproj", "{2888832E-DF3C-4988-8C75-705799A06FFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{5170E353-FBC8-49F4-9DEB-9874BD1F112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5170E353-FBC8-49F4-9DEB-9874BD1F112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5170E353-FBC8-49F4-9DEB-9874BD1F112E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F671F11-68A5-4515-8FDF-BD6D1B548322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F671F11-68A5-4515-8FDF-BD6D1B548322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F671F11-68A5-4515-8FDF-BD6D1B548322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F671F11-68A5-4515-8FDF-BD6D1B548322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2888832E-DF3C-4988-8C75-705799A06FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2888832E-DF3C-4988-8C75-705799A06FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2888832E-DF3C-4988-8C75-705799A06FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2888832E-DF3C-4988-8C75-705799A06FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
