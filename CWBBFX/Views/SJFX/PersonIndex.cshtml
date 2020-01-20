@@ -3,9 +3,12 @@
     ViewBag.Title = "数据分析(个人)";
 }
 <div style="padding-left: 40px;">
-    <label>月份：</label>
+    <div class="layui-input-inline" style="width:200px">
+        <label style="float: left;line-height: 39px;">月份：</label>
+        <input style="float: left;width:70%" type="text" class="layui-input" id="text_yf" placeholder="yyyy-MM" onClick="WdatePicker({dateFmt:'yyyyMM'})">
+    </div>
     <div class="layui-input-inline">
-        <input type="text" class="layui-input" id="text_yf" placeholder="yyyy-MM" onClick="WdatePicker({dateFmt:'yyyyMM'})">
+        <input type="button" class="layui-btn layui-btn-normal" value="查询" id="button_query" />
     </div>
 </div>
 
@@ -41,3 +44,23 @@
 
     </div>
 </div>
+<input type="hidden" id="hidden_code" value="@ViewData["code"]" />
+<input type="hidden" id="hidden_msg" value="@ViewData["msg"]" />
+@*<script src="~/Scripts/jquery/jquery.min.js"></script>*@
+<script>
+    $(function () {
+        var code = $("#hidden_code");
+        var msg = $("#hidden_msg");
+        if (code.val() != "0") {
+            layer.msg(msg.val());
+        }
+        
+    });
+
+    $("#button_query").click(function () {
+        //查询
+        var text_yf = $("#text_yf");
+        window.location.href = "PersonIndex?YF=" + text_yf.val();
+    });
+
+</script>

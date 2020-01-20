@@ -65,6 +65,8 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <div style="padding: 15px;">
+                @Scripts.Render("~/Scripts/jquery/jquery.min.js")
+                @Scripts.Render("~/Scripts/layui/layui.all.js")
                 @RenderBody()
             </div>
         </div>
@@ -74,8 +76,7 @@
             © layui.com - 底部固定区域
         </div>
     </div>
-    @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
-    @Scripts.Render("~/Scripts/layui/layui.all.js")
+
     @Scripts.Render("~/Scripts/My97DatePicker/WdatePicker.js")
 </body>
 </html>

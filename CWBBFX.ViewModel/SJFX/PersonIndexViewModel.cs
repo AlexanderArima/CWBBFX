@@ -45,10 +45,20 @@ namespace CWBBFX.ViewModel.SJFX
         public string ZCFZBL { get; set; }
 
         /// <summary>
+        /// 错误码，0表示返回数据成功
+        /// </summary>
+        public int code { get; set; } = 0;
+
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        public string msg { get; set; } = "";
+
+        /// <summary>
         /// 查询
         /// </summary>
         /// <returns></returns>
-        public static void Query(DateTime date)
+        public static PersonIndexViewModel Query(DateTime date)
         {
             PersonIndexViewModel model = new PersonIndexViewModel();
             //1. 查询本月和上个月
@@ -72,10 +82,25 @@ namespace CWBBFX.ViewModel.SJFX
                     model.JZHB = Math.Round(jzhb,3).ToString("P");
                     break;
                 case 1:
+                    //返回一条数据，可能是这个月的也可能是上个月的
+                    var item = list[0];
+                    if(item.YF == date.ToString("yyyyMM"))
+                    {
+                        //本月
+                        model.JZ = item.JZ;
+                        model.JZHB = "0%";
+                        break;
+                    }
+                    model.code = 1;
+                    model.msg = "查询不到本月数据";
                     break;
                 case 0:
+                    //没有返回数据
+                    model.code = 1;
+                    model.msg = "查询不到本月数据";
                     break;
             }
+            return model;
         }
 
     }
